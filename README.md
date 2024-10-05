@@ -1,4 +1,4 @@
-# ProofOfNoLoss
+# ProofOfWin
 
 The decentralized voting platform is designed for Devfolio hackers, enabling them to cast votes on hackathon projects. Hackers can cast their votes before the winners are officially announced, with voting closing immediately after the announcement. The project with the highest number of votes will receive 50% of the total reward pool as a prize, while the remaining 50% will be distributed among projects that did not win any bounties, ensuring support for all participants. The platform incorporates TLS Notary to verify voter identity, confirming that only legitimate Devfolio hackers can participate in the voting process.
 
