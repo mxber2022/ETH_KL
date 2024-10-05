@@ -1,75 +1,78 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from 'react';
+import styles from './ListProjects.module.css';
 
 interface Project {
-    name: string;
-    tagline: string;
+  name: string;
+  tagline: string;
 }
 
 const ListProjects: React.FC = () => {
-    const [projects, setProjects] = useState<Project[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [betAmounts, setBetAmounts] = useState<{ [key: number]: string }>({});
 
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const response = await fetch('https://api.devfolio.co/api/search/projects', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        hackathon_slugs: ['ethwarsaw-hackathon-2024'],
-                        q: '',
-                        filter: 'all',
-                        prizes: [],
-                        prize_tracks: [],
-                        category: [],
-                        from: 0,
-                        size: 10,
-                        tracks: [],
-                    }),
-                });
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects');
+        if (!response.ok) {
+          throw new Error('Failed to fetch projects');
+        }
+        const data = await response.json();
+        const projectList = data.hits.hits.map((project: any) => ({
+          name: project._source.name,
+          tagline: project._source.tagline,
+        }));
+        setProjects(projectList);
+      } catch (err: any) {
+        setError(err);
+      }
+    };
 
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
+    fetchProjects();
+  }, []);
 
-                const data = await response.json();
-                const fetchedProjects = data.hits.hits.map((hit: any) => ({
-                    name: hit._source.name,
-                    tagline: hit._source.tagline,
-                }));
+  const handleBetChange = (index: number, value: string) => {
+    setBetAmounts((prev) => ({ ...prev, [index]: value }));
+  };
 
-                setProjects(fetchedProjects);
-            } catch (error: any) {
-                setError(error.message);
-            } finally {
-                setLoading(false);
-            }
-        };
+  const handleVote = (index: number) => {
+    const amount = betAmounts[index] || '0'; // Default to '0' if no input
+    // Implement vote functionality here
+    console.log(`Voted for ${projects[index].name} with amount: ${amount}`);
+  };
 
-        fetchProjects();
-    }, []);
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
-    if (loading) return <div>Loading projects...</div>;
-    if (error) return <div>Error: {error}</div>;
-
-    return (
-        <div>
-            <h2>Projects</h2>
-            <ul>
-                {projects.map((project, index) => (
-                    <li key={index}>
-                        <h3>{project.name}</h3>
-                        <p>{project.tagline}</p>
-                    </li>
-                ))}
-            </ul>
+  return (
+    <div className={styles.cardContainer}>
+      {projects.map((project, index) => (
+        <div key={index} className={styles.card}>
+          <h3 className={styles.cardTitle}>{project.name}</h3>
+          <p className={styles.cardTagline}>{project.tagline}</p>
+          <div className={styles.betContainer}>
+            <input
+              type="number"
+              className={styles.betInput}
+              value={betAmounts[index] || ''}
+              onChange={(e) => handleBetChange(index, e.target.value)}
+              placeholder="Amount to bet"
+            />
+            <button
+              className={styles.voteButton}
+              onClick={() => handleVote(index)}
+            >
+              Vote
+            </button>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default ListProjects;

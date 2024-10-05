@@ -16,7 +16,7 @@ export async function GET() {
         prizes: [],
         prize_tracks: [],
         category: [],
-        size: 10,
+        size: 100,
         tracks: [],
       }),
     });

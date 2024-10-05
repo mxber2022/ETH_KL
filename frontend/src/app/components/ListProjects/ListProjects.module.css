@@ -1,0 +1,94 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards */
+    padding: 20px;
+    gap: 20px; /* Space between cards */
+}
+
+.card {
+    display: flex; /* Use flexbox for card */
+    flex-direction: column; /* Column layout for title, tagline, and input/button */
+    justify-content: space-between; /* Space items out evenly */
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 12px; /* Rounded corners for the card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    padding: 20px;
+    width: 300px; /* Fixed width for cards */
+    min-height: 250px; /* Minimum height for cards */
+    max-height: 350px; /* Maximum height for cards */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.cardTitle {
+    font-size: 1.6em; /* Larger title font size */
+    color: #333; /* Darker text color for title */
+    margin: 0 0 10px; /* Spacing below title */
+    overflow-wrap: break-word; /* Allow breaking of long words */
+}
+
+.cardTagline {
+    font-size: 1.1em; /* Slightly larger tagline font size */
+    color: #666; /* Lighter text color for tagline */
+    margin-bottom: 15px; /* Space below tagline */
+    overflow-wrap: break-word; /* Allow breaking of long words */
+}
+
+.betContainer {
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between input and button */
+    margin-top: auto; /* Push to the bottom of the card */
+}
+
+.betInput {
+    border: 2px solid #0070f3; /* Blue border for the input */
+    border-radius: 8px; /* Rounded corners for the input */
+    padding: 10px;
+    font-size: 1em; /* Font size for the input */
+    width: 60%; /* Width for the input */
+    outline: none; /* Remove outline */
+    transition: border-color 0.2s; /* Smooth border color transition */
+}
+
+.betInput:focus {
+    border-color: #005bb5; /* Darker border color on focus */
+}
+
+.voteButton {
+    background-color: #0070f3; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 8px; /* Rounded corners for button */
+    padding: 10px 15px; /* Button padding */
+    cursor: pointer; /* Pointer cursor for button */
+    font-size: 1em; /* Font size for button */
+    transition: background-color 0.2s, transform 0.2s; /* Smooth hover effect */
+}
+
+.voteButton:hover {
+    background-color: #005bb5; /* Darker button color on hover */
+    transform: translateY(-2px); /* Lift button on hover */
+}
+
+.voteButton:active {
+    transform: translateY(0); /* Reset lift effect on button press */
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+        flex-direction: column; /* Stack cards on smaller screens */
+        align-items: center; /* Center cards */
+    }
+
+    .card {
+        width: 90%; /* Full width on mobile */
+        max-height: none; /* Allow full height on mobile */
+    }
+}
