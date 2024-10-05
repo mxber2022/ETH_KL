@@ -15,7 +15,7 @@ function Nav() {
                         </Link>
                     </div>
 
-                    <div >
+                    {/* <div >
                         <Link href="/Donate" style={{ color: 'black', textDecoration: 'none' }}>
                             
                         </Link>
@@ -37,7 +37,7 @@ function Nav() {
                         <Link href="/Vote" style={{ color: 'black', textDecoration: 'none' }}>
                             
                         </Link>
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className="nav__right">
