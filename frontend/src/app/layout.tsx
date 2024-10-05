@@ -1,30 +1,28 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { headers } from 'next/headers'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-import { cookieToInitialState } from 'wagmi'
+const inter = Inter({ subsets: ["latin"] });
 
-import { config } from '@/config'
-import Web3ModalProvider from '@/context'
+import { headers } from "next/headers"; // added
+import ContextProvider from '@/context'
 
 export const metadata: Metadata = {
-  title: 'MetaPredict',
-  description: 'The Worlds Prediction Market',
-  keywords: ['Prediction Market', 'Gamble']
-}
+  title: "AppKit Example App",
+  description: "Powered by WalletConnect"
+};
 
 export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const initialState = cookieToInitialState(config, headers().get('cookie'))
+  const cookies = headers().get('cookie')
+
   return (
     <html lang="en">
-      <body>
-      
-          <Web3ModalProvider initialState={initialState}>{children}</Web3ModalProvider>
-        
+      <body className={inter.className}>
+        <ContextProvider cookies={cookies}>{children}</ContextProvider>
       </body>
     </html>
   )

@@ -638,6 +638,125 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
+"@reown/appkit-adapter-wagmi@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-adapter-wagmi/-/appkit-adapter-wagmi-1.0.7.tgz#3c9a8a2e542c4503d73b9cdbaf17bbd473a5c8b3"
+  integrity sha512-4dnLLm3E7N/1XVYZ1EGuc5vIZmPeMcwMOSyYeIDMZemaNIvbfWXfcTM4NxSW6TyWiI9WB3iYNDlco+bvANkZLQ==
+  dependencies:
+    "@reown/appkit" "1.0.7"
+    "@reown/appkit-common" "1.0.7"
+    "@reown/appkit-core" "1.0.7"
+    "@reown/appkit-polyfills" "1.0.7"
+    "@reown/appkit-scaffold-ui" "1.0.7"
+    "@reown/appkit-siwe" "1.0.7"
+    "@reown/appkit-ui" "1.0.7"
+    "@reown/appkit-utils" "1.0.7"
+    "@reown/appkit-wallet" "1.0.7"
+    "@walletconnect/universal-provider" "2.17.0"
+    "@walletconnect/utils" "2.17.0"
+    valtio "1.11.2"
+
+"@reown/appkit-common@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-common/-/appkit-common-1.0.7.tgz#2f34f985556bbee3f09de24d21a3dbe6be539788"
+  integrity sha512-V7dNQWgOwwur/u1RoQ2X3snwev39F3nhqreyXnXz2llKYDSgTaXHcc+XRz5OuxbKS5sClhT5c+IdvCfAq75dRQ==
+  dependencies:
+    bignumber.js "9.1.2"
+    dayjs "1.11.10"
+
+"@reown/appkit-core@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-core/-/appkit-core-1.0.7.tgz#4fec315474f6811fa3fe71a387ed93ad6681cc5c"
+  integrity sha512-BPzl6daxcGziasPpnnslf1eqVb80hcwjg1863E6+e123y8LeoQxYZZc9wssRaLpeM3j7iNlnemJJVFOe1/ktEg==
+  dependencies:
+    "@reown/appkit-common" "1.0.7"
+    "@reown/appkit-wallet" "1.0.7"
+    "@walletconnect/universal-provider" "2.17.0"
+    valtio "1.11.2"
+
+"@reown/appkit-polyfills@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-polyfills/-/appkit-polyfills-1.0.7.tgz#1e7b0b760641f200e1f8939831cc852b9a0a41e2"
+  integrity sha512-i4sr8HADgmDzhEt840BBELPaN7bJOGa/MFUIY3QDcZrBDfnlkn0FXI5Oi2PlJU82f0aZtd3QAWPd531U1vUavA==
+  dependencies:
+    buffer "6.0.3"
+
+"@reown/appkit-scaffold-ui@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-scaffold-ui/-/appkit-scaffold-ui-1.0.7.tgz#0696529302320221d231dac9943a4402b9f59905"
+  integrity sha512-N+D4tW93GAZID5srSZx0B0/i6Ie+ObsISbKoxoGXZ9aGvlV+UXorr8NfTxDVavhEwkbIxpViWNuKYzOgY8/mlw==
+  dependencies:
+    "@reown/appkit-common" "1.0.7"
+    "@reown/appkit-core" "1.0.7"
+    "@reown/appkit-siwe" "1.0.7"
+    "@reown/appkit-ui" "1.0.7"
+    "@reown/appkit-utils" "1.0.7"
+    "@reown/appkit-wallet" "1.0.7"
+    lit "3.1.0"
+
+"@reown/appkit-siwe@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-siwe/-/appkit-siwe-1.0.7.tgz#3959179aa851f64fad84326823868499a6208123"
+  integrity sha512-GzLsUrLZJKdfsa6dMTa1JrXmylGf7LHC+2/62wmAoI+ldzFbs+O1ud+Y6BBM+5Rr7fqhZisaf8PDfpvoHPjRIg==
+  dependencies:
+    "@reown/appkit-common" "1.0.7"
+    "@reown/appkit-core" "1.0.7"
+    "@reown/appkit-ui" "1.0.7"
+    "@reown/appkit-utils" "1.0.7"
+    "@reown/appkit-wallet" "1.0.7"
+    "@walletconnect/utils" "2.17.0"
+    lit "3.1.0"
+    valtio "1.11.2"
+
+"@reown/appkit-ui@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-ui/-/appkit-ui-1.0.7.tgz#25fa1df2a39fdf12fcd8fed59b01a02179dbd969"
+  integrity sha512-mmZZA+1XrOxH6mdFMpOttmb8FsdV0QgjqDLUXwmCBuzsuzVWkcgOrSBlZ4ypLxS2ZgBdC4Trxlf8dF4/m1ZTVA==
+  dependencies:
+    lit "3.1.0"
+    qrcode "1.5.3"
+
+"@reown/appkit-utils@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-utils/-/appkit-utils-1.0.7.tgz#52d2f0604b85f179e3648e258e7a376663576f8d"
+  integrity sha512-bkWRbVdB+Pjys9Xk0CKy+O6bA1XvSTSdf+31I/OlIjhMSqFKYrUwYbUaQPWyLfjg1PS7hyjss7mnrcT2m56rGg==
+  dependencies:
+    "@reown/appkit-common" "1.0.7"
+    "@reown/appkit-core" "1.0.7"
+    "@reown/appkit-polyfills" "1.0.7"
+    "@reown/appkit-wallet" "1.0.7"
+    "@walletconnect/logger" "2.1.2"
+    "@walletconnect/universal-provider" "2.17.0"
+    valtio "1.11.2"
+
+"@reown/appkit-wallet@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit-wallet/-/appkit-wallet-1.0.7.tgz#a0fe74885eab80a2a00c9c3642061bdb2b2bc1a3"
+  integrity sha512-sDgDtgHfKet1B0l9q6YMViz0RlPk7g7PQaV3Kerf+RIpKPbpWCVgvGK/DHuQhFP3WVOpLeVKKg66PpXzW/mupQ==
+  dependencies:
+    "@reown/appkit-common" "1.0.7"
+    "@reown/appkit-polyfills" "1.0.7"
+    "@walletconnect/logger" "2.1.2"
+    zod "3.22.4"
+
+"@reown/appkit@1.0.7", "@reown/appkit@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@reown/appkit/-/appkit-1.0.7.tgz#ba61a9e419c417509359efc2705b5fd8f94af2db"
+  integrity sha512-FDLI4T5XVx9HX/2o1lx3CnmvnLg/cj2dt7gSkZMH08B65+CmHNwZMfcb/zxnFObIMZ8KIZ5GFqKZhAK4SGWUFw==
+  dependencies:
+    "@reown/appkit-common" "1.0.7"
+    "@reown/appkit-core" "1.0.7"
+    "@reown/appkit-polyfills" "1.0.7"
+    "@reown/appkit-scaffold-ui" "1.0.7"
+    "@reown/appkit-siwe" "1.0.7"
+    "@reown/appkit-ui" "1.0.7"
+    "@reown/appkit-utils" "1.0.7"
+    "@reown/appkit-wallet" "1.0.7"
+    "@walletconnect/types" "2.17.0"
+    "@walletconnect/universal-provider" "2.17.0"
+    "@walletconnect/utils" "2.17.0"
+    valtio "1.11.2"
+
 "@safe-global/safe-apps-provider@0.18.3":
   version "0.18.3"
   resolved "https://registry.yarnpkg.com/@safe-global/safe-apps-provider/-/safe-apps-provider-0.18.3.tgz#805a42e24f5dde803cb96dac251a3c9e256de45b"
@@ -900,7 +1019,7 @@
   resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.59.0.tgz#d8323f1c6eb0e573ab0aa85a7b7690d0c263818a"
   integrity sha512-WGD8uIhX6/deH/tkZqPNcRyAhDUqs729bWKoByYHSogcshXfFbppOdTER5+qY7mFvu8KEFJwT0nxr8RfPTVh0Q==
 
-"@tanstack/react-query@^5.51.21":
+"@tanstack/react-query@^5.59.0":
   version "5.59.0"
   resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.59.0.tgz#5dcc21cfb85ecad6dcb1bf2a616d2820c0b49754"
   integrity sha512-YDXp3OORbYR+8HNQx+lf4F73NoiCmCcSvZvgxE29OifmQFk0sBlO26NWLHpcNERo92tVk3w+JQ53/vkcRUY1hA==
@@ -2848,9 +2967,9 @@ jiti@^1.21.0:
   integrity sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==
 
 jiti@^2.1.2:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/jiti/-/jiti-2.2.1.tgz#0c968cd6c9b4baeb4074abd2f2f2dc42f6537a09"
-  integrity sha512-weIl/Bv3G0J3UKamLxEA2G+FfQ33Z1ZkQJGPjKFV21zQdKWu2Pi6o4elpj2uEl5XdFJZ9xzn1fsanWTFSt45zw==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/jiti/-/jiti-2.3.1.tgz#b81ff051075117768dd67829f47f5035eeceb5c7"
+  integrity sha512-xPZ6pPzUifI8XDBBxIL4OB1w1ZKmBpmNEeKwNt2d0Spn8XisAIZhWrlOHq5seBrFGTxVx9PbrWvEMyrk4IO5bA==
 
 joycon@^3.1.1:
   version "3.1.1"
@@ -4023,7 +4142,6 @@ string_decoder@~1.1.1:
     safe-buffer "~5.1.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
-  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -4313,7 +4431,7 @@ valtio@1.11.2:
     proxy-compare "2.5.1"
     use-sync-external-store "1.2.0"
 
-viem@^2.1.1, viem@^2.18.8:
+viem@^2.1.1, viem@^2.21.18:
   version "2.21.18"
   resolved "https://registry.yarnpkg.com/viem/-/viem-2.21.18.tgz#cdab1ff78b1090dfb43a3b0d12b03dd3b251ada3"
   integrity sha512-CuZpymwBsuK2/YNDJE06EXxpfYs71X4v5ZwiGV5RczLKOwfHa/XuM3+GKbAoKCVeQ/tFt5n8XeHsMnbvEAauTg==
@@ -4328,7 +4446,7 @@ viem@^2.1.1, viem@^2.18.8:
     webauthn-p256 "0.0.5"
     ws "8.17.1"
 
-wagmi@^2.12.2:
+wagmi@^2.12.17:
   version "2.12.17"
   resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-2.12.17.tgz#b3fad0dc38a67a35a2506db3dc8df90164f1ee87"
   integrity sha512-WkofyvOX6XGOXrs8W0NvnzbLGIb9Di8ECqpMDW32nqwTKRxfolfN4GI/AlAMs9fjx4h3k8LGTfqa6UGLb063yg==

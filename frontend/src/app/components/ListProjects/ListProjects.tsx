@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useState, useCallback, useContext } from 'react';
-import styles from './ListProjects.module.css';
-import { Identity } from "@semaphore-protocol/core"
+import React, { useEffect, useState, useCallback } from "react";
+import styles from "./ListProjects.module.css";
+import { Identity } from "@semaphore-protocol/core";
 
 interface Project {
   name: string;
@@ -13,15 +13,16 @@ const ListProjects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [betAmounts, setBetAmounts] = useState<{ [key: number]: string }>({});
-
   const [jsonData, setJsonData] = useState<any>(null);
-  //const [error, setError] = useState<string | null>(null);
+  const [signature, setSignature] = useState<string | null>(null);
+  const [responseMessage, setResponseMessage] = useState<string | null>(null);
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('/api/projects');
+        const response = await fetch("/api/projects");
         if (!response.ok) {
-          throw new Error('Failed to fetch projects');
+          throw new Error("Failed to fetch projects");
         }
         const data = await response.json();
         const projectList = data.hits.hits.map((project: any) => ({
@@ -30,7 +31,7 @@ const ListProjects: React.FC = () => {
         }));
         setProjects(projectList);
       } catch (err: any) {
-        setError(err);
+        setError(err.message);
       }
     };
 
@@ -42,71 +43,85 @@ const ListProjects: React.FC = () => {
   };
 
   const handleVote = (index: number) => {
-    const amount = betAmounts[index] || '0'; // Default to '0' if no input
-    // Implement vote functionality here
+    const amount = betAmounts[index] || "0";
     console.log(`Voted for ${projects[index].name} with amount: ${amount}`);
-
-
   };
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-
-
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
 
     if (file) {
       try {
-        const fileContent = await file.text(); // Read file content as text
-        const json = JSON.parse(fileContent); // Parse the JSON content
+        const fileContent = await file.text();
+        const json = JSON.parse(fileContent);
         setJsonData(json);
         setError(null);
       } catch (err) {
-        setError('Invalid JSON file.');
+        setError("Invalid JSON file.");
         setJsonData(null);
       }
     }
   };
 
   const handleUpload = async () => {
-    // Implement your upload logic here
-   // console.log('Uploading JSON data:', jsonData);
-    
-    const privateKey = localStorage.getItem("identity");
-    const identity = new Identity()
-    localStorage.setItem("identity", identity.privateKey.toString())
+    const { privateKey, publicKey, commitment } = new Identity();
+    console.log("privateKey: ", privateKey);
+    console.log("publicKey: ", publicKey);
 
-    //const file = event.target.files?.[0];
-   // const fileContent = await file?.text();
-
-    let response = await fetch("api/prove", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        
-        body: JSON.stringify({
-          //@ts-ignore
-            "proof": jsonData,
-            "identityCommitment": {
-                "commit": identity.commitment.toString()
-            }
-        })
-    })
+    let response = await fetch("/api/prove", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        proof: jsonData,
+        identityCommitment: {
+          commit: commitment.toString(),
+        },
+      }),
+    });
 
     if (response.status === 200) {
-       
-        let data = await response.json()
-        localStorage.setItem("signature", data.signature.toString())
+      const data = await response.json();
+      localStorage.setItem("signature", data.signature.toString());
+      setSignature(data.signature.toString());
+      setResponseMessage("Proof uploaded successfully!");
     } else {
-        console.log("Some error occurred, please try again!")
+      setResponseMessage("Some error occurred, please try again!");
     }
   };
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+      <div className={styles.uploadSection}>
+        <h1>Upload Proof of Hacker JSON File</h1>
+        <input
+          type="file"
+          accept=".json"
+          onChange={handleFileChange}
+          className={styles.fileInput}
+        />
+        {error && <p className={styles.errorText}>{error}</p>}
+        {jsonData && (
+          <div>
+    
+            <button onClick={handleUpload} className={styles.uploadButton}>
+              Upload
+            </button>
+          </div>
+        )}
+        {responseMessage && <p className={styles.responseText}>{responseMessage}</p>}
+        {signature && (
+          <div className={styles.signatureSection}>
+            <h2>Signature:</h2>
+            <p>{signature}</p>
+          </div>
+        )}
+      </div>
+
       <div className={styles.cardContainer}>
         {projects.map((project, index) => (
           <div key={index} className={styles.card}>
@@ -116,33 +131,17 @@ const ListProjects: React.FC = () => {
               <input
                 type="number"
                 className={styles.betInput}
-                value={betAmounts[index] || ''}
+                value={betAmounts[index] || ""}
                 onChange={(e) => handleBetChange(index, e.target.value)}
                 placeholder="Amount"
               />
-              <button
-                className={styles.voteButton}
-                onClick={() => handleVote(index)}
-              >
+              <button className={styles.voteButton} onClick={() => handleVote(index)}>
                 Vote
               </button>
             </div>
           </div>
         ))}
       </div>
-
-      <div>
-      <h1>Upload JSON File</h1>
-      <input type="file" accept=".json" onChange={handleFileChange} />
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {jsonData && (
-        <div>
-          <h2>Uploaded JSON Data:</h2>
-          {/* <pre>{JSON.stringify(jsonData, null, 2)}</pre> */}
-          <button onClick={handleUpload}>Upload</button>
-        </div>
-      )}
-    </div>
     </>
   );
 };

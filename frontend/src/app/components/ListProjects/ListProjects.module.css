@@ -82,6 +82,38 @@
     transform: translateY(0); /* Reset lift effect on button press */
 }
 
+/* Styles for JSON upload section */
+.uploadSection {
+    text-align: center; /* Center the upload section */
+    margin: 40px 0; /* Margin around the section */
+}
+
+.uploadSection h1 {
+    font-size: 1.8em; /* Larger heading size */
+    color: #333; /* Dark text color */
+}
+
+.uploadSection input[type="file"] {
+    margin: 20px 0; /* Margin above and below the file input */
+}
+
+.uploadResponse {
+    margin-top: 20px; /* Margin above response section */
+    padding: 10px;
+    border: 1px solid #ccc; /* Border for response box */
+    border-radius: 8px; /* Rounded corners for response box */
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+.uploadResponse h2 {
+    margin: 0 0 10px; /* Space below the heading */
+}
+
+.uploadResponse p {
+    margin: 0; /* Remove margin for paragraphs */
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
     .cardContainer {
         flex-direction: column; /* Stack cards on smaller screens */
@@ -92,4 +124,19 @@
         width: 90%; /* Full width on mobile */
         max-height: none; /* Allow full height on mobile */
     }
+
+    .uploadSection {
+        width: 90%; /* Full width on mobile */
+    }
+}
+
+.uploadButton {
+    background-color: #0070f3; /* Button background color */
+    color: white; /* Button text color */
+    border: 2px solid #005bb5; /* Blue border for the button */
+    border-radius: 8px; /* Rounded corners for button */
+    padding: 10px 15px; /* Button padding */
+    cursor: pointer; /* Pointer cursor for button */
+    font-size: 1em; /* Font size for button */
+    transition: background-color 0.2s, transform 0.2s, border-color 0.2s; /* Smooth hover effect */
 }

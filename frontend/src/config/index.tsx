@@ -1,27 +1,22 @@
-import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
-
-import { cookieStorage, createStorage } from 'wagmi'
-import { mainnet, sepolia, baseSepolia, modeTestnet, hederaTestnet, rootstockTestnet, optimismSepolia, arbitrumSepolia } from 'wagmi/chains'
+import { cookieStorage, createStorage, http } from '@wagmi/core'
+import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
+import { mainnet, arbitrum, sepolia } from '@reown/appkit/networks'
 
 export const projectId = "9b2fd99411b0746ea4ca219cf395723d"
 
-if (!projectId) throw new Error('Project ID is not defined')
-
-export const metadata = {
-  name: 'Web3Modal',
-  description: 'Web3Modal Example',
-  url: 'https://web3modal.com', 
-  icons: ['https://avatars.githubusercontent.com/u/37784886']
+if (!projectId) {
+  throw new Error('Project ID is not defined')
 }
 
-// Create wagmiConfig
-const chains = [sepolia, rootstockTestnet, optimismSepolia, arbitrumSepolia] as const
-export const config = defaultWagmiConfig({
-  chains,
-  projectId,
-  metadata,
-  ssr: true,
+export const networks = [mainnet, arbitrum, sepolia]
+
+export const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({
     storage: cookieStorage
   }),
+  ssr: true,
+  projectId,
+  networks
 })
+
+export const config = wagmiAdapter.wagmiConfig
