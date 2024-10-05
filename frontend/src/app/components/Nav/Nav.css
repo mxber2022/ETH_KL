@@ -1,0 +1,99 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
+.nav {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem 0;
+    color: #fff;
+    z-index: 999;
+    border: 1px solid rgb(13, 11, 11);
+}
+
+.nav__container {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 1rem;
+}
+
+.nav__left {
+
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav__left img {
+
+    max-width: 150px;
+    width: 100%;
+}
+
+.nav__left input {
+
+    margin: 0;
+    padding: 0.4rem 1rem;
+    color: #000;
+}
+
+wui-connect-button button {
+
+    box-shadow: 0 0 10px #2BEB7C !important;
+    background-color: #2BEB7C !important;
+}
+
+
+@media (max-width: 500px) {
+
+    .nav__container {
+
+        padding: 0 1rem;
+    }
+
+    .nav__left {
+
+        gap: 1.5rem;
+    }
+
+    .nav__left input {
+
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+/*
+    BETBAZAAR Word styling starts
+*/
+
+
+.nav__logo {
+    font-size: 32px;
+    font-weight: 500;
+    color: #0d0a0a;
+    font-family: 'Nunito', sans-serif !important;
+    
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(45deg,  #0107074f, #f1faee);
+    -webkit-background-clip: text;
+   
+    transition: all 0.3s ease;
+}
+
+.nav__link {
+    color: black; /* Set the text color to black */
+    text-decoration: none; /* Remove underline if needed */
+}
+
+.nav__link:hover {
+    text-decoration: underline; /* Optional: underline on hover */
+}

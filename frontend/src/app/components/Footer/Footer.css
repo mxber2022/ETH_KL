@@ -1,0 +1,48 @@
+/* Ensure the entire page takes up at least the full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the main content grows to fill space, pushing the footer down */
+.main-content {
+    flex: 1;
+}
+
+/* Footer styles */
+.footer {
+    background-color: white;
+    border-top: 1px solid black;
+    color: black;
+    padding: 2rem 0;
+    
+    width: 100%;
+    position: relative;
+}
+
+/* Footer container */
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    max-width: 1600px;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+/* Links styles */
+.footer__links {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 500px) {
+    .footer__container {
+        padding: 0 1rem;
+    }
+}

@@ -25,3 +25,18 @@ body {
     text-wrap: balance;
   }
 } */
+
+body {
+  background-color: #fff;
+  font-family: Consolas, monaco, monospace;
+  height: 100%;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #CCC5B7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}

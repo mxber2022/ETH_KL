@@ -60,7 +60,7 @@ const ListProjects: React.FC = () => {
               className={styles.betInput}
               value={betAmounts[index] || ''}
               onChange={(e) => handleBetChange(index, e.target.value)}
-              placeholder="Amount to bet"
+              placeholder="Amount"
             />
             <button
               className={styles.voteButton}

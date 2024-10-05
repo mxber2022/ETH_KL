@@ -4,6 +4,7 @@
     justify-content: center; /* Center the cards */
     padding: 20px;
     gap: 20px; /* Space between cards */
+    padding-top: 110px;
 }
 
 .card {
@@ -16,7 +17,7 @@
     padding: 20px;
     width: 300px; /* Fixed width for cards */
     min-height: 250px; /* Minimum height for cards */
-    max-height: 350px; /* Maximum height for cards */
+    max-height: 400px; /* Maximum height for cards */
     transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
     overflow: hidden; /* Prevent overflow */
 }
