@@ -1,0 +1,39 @@
+{
+    "title": "Devfolio Profile",
+    "description": "Notarize ownership of a twitter profile",
+    "steps": [
+        {
+            "title": "Visit devfolio website",
+            "cta": "Go to devfolio.co",
+            "action": "start"
+        },
+        {
+            "title": "Collect credentials",
+            "description": "Login to your account if you haven't already",
+            "cta": "Check cookies",
+            "action": "two"
+        },
+        {
+            "title": "Notarize devfolio profile",
+            "cta": "Notarize",
+            "action": "three",
+            "prover": true
+        }
+    ],
+    "hostFunctions": [
+        "redirect",
+        "notarize"
+    ],
+    "cookies": [
+        "devfolio.co"
+    ],
+    "headers": [
+        "devfolio.co"
+    ],
+    "requests": [
+        {
+            "url": "https://api.devfolio.co/api/users/ac5726e775a243769baf71e4128c17f2/basic_info",
+            "method": "GET"
+        }
+    ]
+}
