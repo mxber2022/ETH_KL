@@ -1,0 +1,36 @@
+[package]
+name = "verifier"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7", features = ["ws"] }
+axum-core = "0.4"
+
+chrono = "0.4"
+elliptic-curve = {version = "0.13.5", features = ["pkcs8"]}
+eyre = "0.6.12"
+http = { version = "1.1" }
+http-body-util = { version = "0.1" }
+hyper = { version = "1.1", features = ["client", "http1", "server"] }
+hyper-util = { version = "0.1", features = ["full"] }
+mpz-core = { git = "https://github.com/privacy-scaling-explorations/mpz", rev = "9f7403b" }
+p256 = { version = "0.13", features = ["ecdsa", "pkcs8"] }
+serde = {version = "1.0.147", features = ["derive"]}
+serde_json = "1.0"
+thiserror = "1"
+tracing = "0.1.40"
+tracing-subscriber = { version ="0.3.18", features = ["env-filter"] }
+tokio = {version = "1", features = [
+  "rt",
+  "rt-multi-thread",
+  "macros",
+  "net",
+  "io-std",
+  "fs",
+]}
+tokio-util = { version = "0.7", features = ["compat"] }
+tower = { version = "0.4.12", features = ["make"] }
+tower-service = { version = "0.3" }
+
+tlsn-core = { git = "https://github.com/tlsnotary/tlsn.git", tag = "v0.1.0-alpha.5", package = "tlsn-core" }
