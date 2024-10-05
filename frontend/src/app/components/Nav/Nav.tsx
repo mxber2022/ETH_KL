@@ -11,12 +11,13 @@ function Nav() {
                         <Link href="/" style={{ color: 'black', textDecoration: 'none' } }>
                             <div className="nav__logo">
                                 ProofOfWin
+                                
                             </div>
-                            - Every Hacker Goes Home Winning 
+                            
                         </Link>
                     </div>
 
-                    {/* <div >
+                    <div >
                         <Link href="/Donate" style={{ color: 'black', textDecoration: 'none' }}>
                             
                         </Link>
@@ -24,21 +25,22 @@ function Nav() {
 
                     <div >
                         <Link href="/Bridge" style={{ color: 'black', textDecoration: 'none' }}>
-                            
+                        
                         </Link>
                     </div>
 
                     <div >
                         <Link href="/Bet" style={{ color: 'black', textDecoration: 'none' }}>
-                            
+                        
                         </Link>
                     </div>
 
                     <div >
                         <Link href="/Vote" style={{ color: 'black', textDecoration: 'none' }}>
-                            
+                        <p className="tagline" > Every Hacker Goes Home Winning </p>
+
                         </Link>
-                    </div> */}
+                    </div>
 
                 </div>
                 <div className="nav__right">

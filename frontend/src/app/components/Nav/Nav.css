@@ -97,3 +97,12 @@ wui-connect-button button {
 .nav__link:hover {
     text-decoration: underline; /* Optional: underline on hover */
 }
+
+.tagline {
+    font-size: 16px;
+    color: gray; /* Change this to whatever color you prefer */
+    margin-top: 4px; /* Space between logo and tagline */
+    font-style: italic; /* Add italic for a fun, playful look */
+    text-align: center; /* Center the text */
+    display: block;
+}
