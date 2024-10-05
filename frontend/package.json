@@ -20,7 +20,11 @@
     "react": "^18",
     "react-dom": "^18",
     "viem": "^2.18.8",
-    "wagmi": "^2.12.2"
+    "wagmi": "^2.12.2",
+    "@semaphore-protocol/core": "4.0.3",
+    "@semaphore-protocol/data": "4.0.3",
+    "@semaphore-protocol/utils": "4.0.3",
+    "ethers": "^6.11.1"
   },
   "devDependencies": {
     "@types/node": "^20",
