@@ -1,6 +1,6 @@
 {
     "title": "Devfolio Profile",
-    "description": "Notarize ownership of a twitter profile",
+    "description": "Notarize ownership of a Devfolio profile",
     "steps": [
         {
             "title": "Visit devfolio website",
@@ -32,7 +32,7 @@
     ],
     "requests": [
         {
-            "url": "https://api.devfolio.co/api/users/ac5726e775a243769baf71e4128c17f2/basic_info",
+            "url": "https://api.devfolio.co/api/users/9bda9b43884647008ce0a577ae1a5681/basic_info",
             "method": "GET"
         }
     ]

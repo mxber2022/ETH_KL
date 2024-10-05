@@ -5,10 +5,14 @@ function redirect(url) {
 }
 
 function notarize(options) {
+
+  console.log("hello");
   const { notarize } = Host.getFunctions();
+  console.log("hello1", notarize);
   const mem = Memory.fromString(JSON.stringify(options));
   const idOffset = notarize(mem.offset);
   const id = Memory.find(idOffset).readString();
+  console.log("helloid", id);
   return id;
 }
 

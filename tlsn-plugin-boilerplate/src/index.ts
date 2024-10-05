@@ -59,7 +59,7 @@ export function two() {
   console.log(cookies.devfolio_user);
 
   outputJSON({
-    url: 'https://api.devfolio.co/api/users/ac5726e775a243769baf71e4128c17f2/basic_info',
+    url: 'https://api.devfolio.co/api/users/9bda9b43884647008ce0a577ae1a5681/basic_info',
     method: 'GET',
     headers: {
       Host: 'api.devfolio.co',
@@ -80,9 +80,9 @@ export function two() {
 export function parseTwitterResp() {
   const bodyString = Host.inputString();
   const params = JSON.parse(bodyString);
-  console.log("check 1: ");
-  if (params.screen_name) {
-    const revealed = `"screen_name":"${params.username}"`;
+  console.log("check 1: ", params.username);
+  if (params.username) {
+    const revealed = `"username":"${params.username}"`;
     console.log("revealed: ", revealed);
     const selectionStart = bodyString.indexOf(revealed);
     const selectionEnd =
@@ -91,6 +91,7 @@ export function parseTwitterResp() {
       bodyString.substring(0, selectionStart),
       bodyString.substring(selectionEnd, bodyString.length),
     ];
+    console.log("secretResps: ", secretResps);
     outputJSON(secretResps);
   } else {
     outputJSON(false);
