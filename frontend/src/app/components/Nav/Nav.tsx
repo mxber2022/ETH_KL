@@ -30,14 +30,14 @@ function Nav() {
                     </div>
 
                     <div >
-                        <Link href="/Bet" style={{ color: 'black', textDecoration: 'none' }}>
+                        <Link href="/Presentation" style={{ color: 'black', textDecoration: 'none' }}>
                         
                         </Link>
                     </div>
 
                     <div >
-                        <Link href="/Vote" style={{ color: 'black', textDecoration: 'none' }}>
-                        <p className="tagline" > Every Hacker Goes Home Winning </p>
+                        <Link href="/Presentation" style={{ color: 'black', textDecoration: 'none' }}>
+                        <p className="tagline" > Every Hacker Goes Home Winning 🖤 </p>
 
                         </Link>
                     </div>
