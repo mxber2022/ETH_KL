@@ -95,7 +95,7 @@ const ListProjects: React.FC = () => {
 
   return (
     <>
-    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
       <div className={styles.uploadSection}>
         <h1>Upload Proof of Hacker JSON File</h1>
         <input
@@ -111,15 +111,18 @@ const ListProjects: React.FC = () => {
             <button onClick={handleUpload} className={styles.uploadButton}>
               Upload
             </button>
+            <br/>
           </div>
         )}
-        {responseMessage && <p className={styles.responseText}>{responseMessage}</p>}
+        {responseMessage && <p className={styles.responseText}>{`${responseMessage} and verified`}</p>}
         {signature && (
           <div className={styles.signatureSection}>
             <h2>Signature:</h2>
             <p>{signature}</p>
           </div>
+          
         )}
+        <br/><br/><br/>
       </div>
 
       <div className={styles.cardContainer}>
