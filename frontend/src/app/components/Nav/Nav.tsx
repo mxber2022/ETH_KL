@@ -41,6 +41,7 @@ function Nav() {
 
                 </div>
                 <div className="nav__right">
+                <w3m-button />
                 </div>
             </div>
         </nav>
