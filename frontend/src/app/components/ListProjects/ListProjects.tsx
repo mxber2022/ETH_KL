@@ -1,5 +1,4 @@
 "use client"
-// components/ProjectList.js
 
 import React, { useEffect, useState } from 'react';
 
@@ -8,8 +7,10 @@ interface Project {
     tagline: string;
 }
 
-function ListProjects () {
+const ListProjects: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchProjects = async () => {
@@ -20,16 +21,15 @@ function ListProjects () {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        hackathon_slugs: ["ethwarsaw-hackathon-2024"],
-                        q: "",
-                        filter: "all",
+                        hackathon_slugs: ['ethwarsaw-hackathon-2024'],
+                        q: '',
+                        filter: 'all',
                         prizes: [],
                         prize_tracks: [],
                         category: [],
                         from: 0,
                         size: 10,
-                        hashtags: [],
-                        tracks: []
+                        tracks: [],
                     }),
                 });
 
@@ -38,29 +38,32 @@ function ListProjects () {
                 }
 
                 const data = await response.json();
-
-                // Extracting name and tagline
-                const extractedProjects = data.hits.hits.map((project: any)=> ({
-                    name: project._source.name,
-                    tagline: project._source.tagline
+                const fetchedProjects = data.hits.hits.map((hit: any) => ({
+                    name: hit._source.name,
+                    tagline: hit._source.tagline,
                 }));
 
-                setProjects(extractedProjects);
-            } catch (error) {
-                console.error('Error fetching projects:', error);
+                setProjects(fetchedProjects);
+            } catch (error: any) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchProjects();
     }, []);
 
+    if (loading) return <div>Loading projects...</div>;
+    if (error) return <div>Error: {error}</div>;
+
     return (
         <div>
-            <h1>Projects</h1>
+            <h2>Projects</h2>
             <ul>
                 {projects.map((project, index) => (
                     <li key={index}>
-                        <h2>{project.name}</h2>
+                        <h3>{project.name}</h3>
                         <p>{project.tagline}</p>
                     </li>
                 ))}
@@ -70,4 +73,3 @@ function ListProjects () {
 };
 
 export default ListProjects;
-
