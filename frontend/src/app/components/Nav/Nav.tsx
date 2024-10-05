@@ -10,8 +10,9 @@ function Nav() {
                     <div>
                         <Link href="/" style={{ color: 'black', textDecoration: 'none' } }>
                             <div className="nav__logo">
-                                ProofOfNoLoss
+                                ProofOfWin
                             </div>
+                            - Every Hacker Goes Home Winning 
                         </Link>
                     </div>
 
