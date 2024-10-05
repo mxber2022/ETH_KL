@@ -3,6 +3,13 @@
 import React, { useEffect, useState, useCallback } from "react";
 import styles from "./ListProjects.module.css";
 import { Identity } from "@semaphore-protocol/core";
+import { Vote } from "../Vote/Vote"
+
+import { useWriteContract } from 'wagmi';
+import { abi } from '../../../abi';
+import myconfig from '../../myconfig.json';
+import { Address, parseEther } from 'viem';
+
 
 interface Project {
   name: string;
@@ -42,9 +49,23 @@ const ListProjects: React.FC = () => {
     setBetAmounts((prev) => ({ ...prev, [index]: value }));
   };
 
+  const { writeContract } = useWriteContract();
+
   const handleVote = (index: number) => {
     const amount = betAmounts[index] || "0";
     console.log(`Voted for ${projects[index].name} with amount: ${amount}`);
+
+     writeContract({
+      abi,
+      address: myconfig.CONTRACT_ADDRESS_SEPOLIA as Address,
+      functionName: 'vote',
+      args: [
+        projects[index].name
+      ],
+      value: parseEther(amount)
+  });
+     //Vote(projects[index].name, amount);
+
   };
 
   const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {

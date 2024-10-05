@@ -3,7 +3,7 @@
 import { wagmiAdapter, projectId } from '@/config'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createAppKit } from '@reown/appkit/react' 
-import { mainnet, arbitrum, avalanche, base, optimism, polygon } from '@reown/appkit/networks'
+import { sepolia } from '@reown/appkit/networks'
 import React, { type ReactNode } from 'react'
 import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi'
 
@@ -16,18 +16,20 @@ if (!projectId) {
 
 // Set up metadata
 const metadata = {
-  name: "appkit-example-scroll",
-  description: "AppKit Example - Scroll",
-  url: "https://scrollapp.com", // origin must match your domain & subdomain
-  icons: ["https://avatars.githubusercontent.com/u/179229932"]
+  name: "ProofOfNoLoss",
+  description: "vote",
+  url: "", // origin must match your domain & subdomain
+  icons: [""]
 }
 
 // Create the modal
 const modal = createAppKit({
   adapters: [wagmiAdapter],
   projectId,
-  networks: [mainnet, arbitrum, avalanche, base, optimism, polygon],
-  defaultNetwork: mainnet,
+  //@ts-ignore
+  networks: [sepolia],
+  defaultNetwork: sepolia,
+  allowUnsupportedChain: true,
   metadata: metadata,
   features: {
     analytics: true, // Optional - defaults to your Cloud configuration
