@@ -2,6 +2,12 @@
 
 The decentralized voting platform is designed for Devfolio hackers, enabling them to cast votes on hackathon projects. Hackers can cast their votes before the winners are officially announced, with voting closing immediately after the announcement. The project with the highest number of votes will receive 50% of the total reward pool as a prize, while the remaining 50% will be distributed among projects that did not win any bounties, ensuring support for all participants. The platform incorporates TLS Notary to verify voter identity, confirming that only legitimate Devfolio hackers can participate in the voting process.
 
+## Smart contract 
+
+Ethereum Sepolia - 0x3F78D38bC490F6cd0Bc346703d618028B7276D78 <br/>
+Scroll Sepolia - 0x5208f311d56422153e7b221589b25889e556840d <br/>
+Manta Sepolia - 0xAaa906c8C2720c50B69a5Ba54B44253Ea1001C98<br/>
+
 ## 🌟 Features
 
 - **Exclusive Voting:** Only verified hackers from Devfolio can cast their votes.
