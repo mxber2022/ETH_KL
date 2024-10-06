@@ -17,7 +17,7 @@ Manta Sepolia - 0xAaa906c8C2720c50B69a5Ba54B44253Ea1001C98<br/>
   - **50% of the remaining pool** is distributed among projects that did not win any bounty, ensuring that all creative efforts are acknowledged.
 - **TLS Notary Integration:** We use TLS Notary to validate the identity of voters, ensuring a fair voting process without any cheating.
 
-## Flow Diagram
+## 🔥 Flow Diagram 
 
 ![TLS Notary Image](https://github.com/mxber2022/ETH_KL/raw/main/frontend/public/TLSNotary.png)
 
