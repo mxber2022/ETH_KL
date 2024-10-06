@@ -29,7 +29,7 @@ Manta Sepolia - 0xAaa906c8C2720c50B69a5Ba54B44253Ea1001C98<br/>
 - npm (v6 or later)
 - Ethereum wallet (like MetaMask) for interacting with the smart contracts
 
-### Installation
+### Installation (frontend)
 
 1. Clone the repository:
    ```bash
@@ -53,6 +53,26 @@ Manta Sepolia - 0xAaa906c8C2720c50B69a5Ba54B44253Ea1001C98<br/>
 Start the application:
 ```bash
 yarn dev
+```
+
+### Running the websocat
+
+```bash
+websocat --binary -v ws-l:0.0.0.0:55688 tcp:api.devfolio.co:443 
+```
+
+### Running the notary server
+
+```bash
+cd ETH_KL/V5/tlsn/notary-server
+cargo r -r
+```
+
+### Running the tls verifier
+
+```bash
+cd ETH_KL/tomaru/tlsn-verifier
+cargo r -r
 ```
 
 ### Usage
