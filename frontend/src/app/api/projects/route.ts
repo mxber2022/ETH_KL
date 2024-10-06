@@ -10,7 +10,7 @@ export async function GET() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        hackathon_slugs: ['ethwarsaw-hackathon-2024'],
+        hackathon_slugs: ["ethkl-24"],
         q: '',
         filter: 'all',
         prizes: [],

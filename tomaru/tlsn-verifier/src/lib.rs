@@ -128,7 +128,7 @@ async fn verify(
         Err(err) => return VerifierServerError::Unexpected(eyre!("Verification failed: cannot parse payload: {err}")).into_response()
     };
     let id_commit = (&payload).identity_commitment.clone();
-
+    debug!("Identity Commitment: {:?}", id_commit);
     // The session proof establishes the identity of the server and the commitments
     // to the TLS transcript.
     let session = &payload.proof.session;
